@@ -121,3 +121,100 @@ footer p {
         margin-top: 24px;
     }
 }
+<<<<<<< Updated upstream
+=======
+.intro {
+    font-size: 1.25rem;
+}
+
+.destination-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.badge--green {
+    color: #174b37;
+    background-color: #d9f0e2;
+    border-color: #a7d7b8;
+}
+
+.badge--orange {
+    color: #693817;
+    background-color: #ffead5;
+    border-color: #f0c69e;
+}
+
+.badge--blue {
+    color: #164b63;
+    background-color: #d9eef5;
+    border-color: #a6d4e4;
+}
+
+#chiffres-cles {
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto 32px;
+}
+
+#chiffres-cles h2 {
+    margin-top: 0;
+}
+
+.key-figures {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.key-figure {
+    margin: 0;
+    padding: 20px 16px;
+    text-align: center;
+    background-color: #f2f7f5;
+    border: 1px solid #dce7e4;
+    border-radius: 12px;
+}
+
+.key-figure-value {
+    margin: 0;
+    color: #087f8c;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: bold;
+    line-height: 1.15;
+}
+
+.key-figure-label {
+    margin: 8px 0 0;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 650px) {
+    #chiffres-cles {
+        width: min(100% - 24px, 1000px);
+        margin-bottom: 24px;
+    }
+
+    .key-figures {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .key-figures {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+>>>>>>> Stashed changes
