@@ -12,9 +12,9 @@
         <h1>Les îles d'Émeraude</h1>
         <p class="intro">Un archipel à explorer, entre forêt et océan.</p>
         <nav>
-            <a href="#destination">La destination</a>
-            <a href="#experiences">Les expériences</a>
-            <a href="#conseils">Conseils</a>
+            <a href="#destination" ,  class="border">La destination</a>
+            <a href="#experiences",  class="border">Les expériences</a>
+            <a href="#conseils" class="border">Conseils</a>
         </nav>
     </header>
     <main class="content-grid">
@@ -27,24 +27,50 @@
                     <span class="badge badge--green">Culture</span>
                 </div>
             <h2>Une destination à part</h2>
-            <p>Un territoire imaginaire riche en paysages et en biodiversité.</p>
-            <img src="\\srv-dc\brobinet$\Downloads\images.jfif" alt="Lagon bleu bordé de végétation">
+            <p class="border">Un territoire imaginaire riche en paysages et en biodiversité.</p>
+            <div class="gallery" role="group" aria-label="Galerie des paysages de l’archipel">
+                <figure class="gallery-item">
+                    <button class="gallery-link" type="button" aria-label="Agrandir la photo du lagon">
+                        <img src="\\srv-dc\brobinet$\Downloads\ftjtju.jfif" alt="Lagon turquoise bordé de collines verdoyantes">
+                    </button>
+                    <figcaption>Le lagon</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <button class="gallery-link" type="button" aria-label="Agrandir la photo de la forêt">
+                        <img src="\\srv-dc\brobinet$\Downloads\images (1).jfif" alt="Sentier traversant une forêt tropicale">
+                    </button>
+                    <figcaption>La forêt</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <button class="gallery-link" type="button" aria-label="Agrandir la photo de la côte">
+                        <img src="\\srv-dc\brobinet$\Downloads\ftjtju.jfif" alt="Village côtier face à l’océan">
+                    </button>
+                    <figcaption>La côte</figcaption>
+                </figure>
+            </div>
             </div>
         </section>
+        <dialog class="image-dialog" aria-label="Photo agrandie">
+            <div class="image-dialog-content">
+                <img class="image-dialog-photo" src="" alt="">
+                <p class="image-dialog-caption"></p>
+                <button class="image-dialog-back" type="button">← Retour à la galerie</button>
+            </div>
+        </dialog>
         <section id="experiences">
             <h2>Trois expériences</h2>
             <div class="cards">
                 <article class="card card-featured">
                     <h3>Observer</h3>
-                    <p>Repérez les oiseaux et découvrez leur habitat.</p>
+                    <p class="border">Repérez les oiseaux et découvrez leur habitat.</p>
                 </article>
                 <article class="card">
                     <h3>Explorer</h3>
-                    <p>Suivez les sentiers au cœur de la forêt.</p>
+                    <p class="border">Suivez les sentiers au cœur de la forêt.</p>
                 </article>
                 <article class="card">
                     <h3>Rencontrer</h3>
-                    <p>Échangez avec les habitants des villages côtiers.</p>
+                    <p class="border">Échangez avec les habitants des villages côtiers.</p>
                 </article>
             </div>
         </section>
@@ -55,7 +81,7 @@
                 <li>Emporter une gourde réutilisable.</li>
                 <li>Observer la faune sans la déranger.</li>
             </ul>
-            <p>Pour en savoir plus sur les océans, consultez
+            <p class="border">Pour en savoir plus sur les océans, consultez
                 <a href="https://oceanservice.noaa.gov/">le site NOAA Ocean Service</a>.
             </p>
         </section>
@@ -84,5 +110,24 @@
     <footer>
         <p>Site réalisé en HTML et CSS – Terminale</p>
     </footer>
+    <script>
+        const imageDialog = document.querySelector(".image-dialog");
+        const enlargedImage = imageDialog.querySelector(".image-dialog-photo");
+        const imageCaption = imageDialog.querySelector(".image-dialog-caption");
+
+        document.querySelectorAll(".gallery-link").forEach((button) => {
+            button.addEventListener("click", () => {
+                const image = button.querySelector("img");
+                enlargedImage.src = image.src;
+                enlargedImage.alt = image.alt;
+                imageCaption.textContent = button.nextElementSibling.textContent;
+                imageDialog.showModal();
+            });
+        });
+
+        imageDialog.querySelector(".image-dialog-back").addEventListener("click", () => {
+            imageDialog.close();
+        });
+    </script>
 </body>
 </html>
