@@ -84,7 +84,7 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
+    border-radius: 20px;
 }
 
 .gallery {
@@ -235,6 +235,7 @@ footer p {
         margin-top: 24px;
     }
 }
+<<<<<<< HEAD
 
 .intro {
     font-size: 1.25rem;
@@ -341,3 +342,8 @@ footer p {
         transform: none;
     }
 }
+=======
+.intro {
+    font-size: 1.25rem;
+}
+>>>>>>> 370d0d4882367a56358cb92f112175c868058e2f
